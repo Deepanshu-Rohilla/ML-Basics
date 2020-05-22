@@ -1,5 +1,4 @@
-
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error
@@ -17,3 +16,9 @@ model.fit(diabetes_X_train, diabetes_Y_train)
 diabetes_Y_predict =  model.predict(diabetes_X_test)
 
 print("Mean squared error is ", mean_squared_error(diabetes_Y_test, diabetes_Y_predict))
+print("Weights: ", model.coef_)
+print("Intercept", model.intercept_)
+
+plt.scatter(diabetes_X_test,diabetes_Y_test)
+plt.plot(diabetes_X_test, diabetes_Y_predict)
+plt.show()
